@@ -397,3 +397,783 @@
 //     }
 // }
 
+///////////////////////////////////////
+///oops
+
+// class Subject
+// {
+//     private String subID;
+//     private String name;
+//     private int maxMarks;
+//     private int marksObtains;
+    
+//     public Subject(String subID,String name,int maxMarks)
+//     {
+//         this.subID=subID;
+//         this.name=name;
+//         this.maxMarks=maxMarks;
+//     }
+    
+//     public String getSubID(){return subID;}
+//     public String getName(){return name;}
+//     public int getMaxMarks(){return maxMarks;}
+//     public int getMarksObtains(){return marksObtains;}
+    
+//     public void setMaxMarks(int mm)
+//     {
+//         maxMarks=mm;
+//     }
+    
+//     public void setMarksObtain(int m)
+//     {
+//         marksObtains=m;
+//     }
+    
+//     boolean isQualified()
+//     {
+//         return marksObtains>=maxMarks/10*4;
+//     }
+    
+//     public String toString()
+//     {
+//         return"\n SubjectID: "+subID+"\n Name "+name+"\n MarksObtained "+marksObtains;
+//     }
+    
+// }
+
+// public class Main {
+
+//     public static void main(String[] args) 
+//     {
+//         Subject subs[]=new Subject[3];
+//         subs[0]=new Subject("s101","DS",100);
+//         subs[1]=new Subject("s102","Algorithms",100);
+//         subs[2]=new Subject("s103","Operating Systems",100);
+
+//         // Create student object
+//     Student student = new Student("19TU1A0508", "SidduGansh", "CSE");
+
+//     // Enroll student in subjects (assuming student can take all three)
+//     for (Subject subject : subs) {
+//       student.enroll(subject);
+//     }
+
+//     // Set marks for some subjects (assuming you have information)
+//     student.setMarks("s101", 90); // Set marks for DS
+//     student.setMarks("s103", 85); // Set marks for Operating Systems
+//     student.setMarks("s102", 85);
+
+//     // Print student information
+//     System.out.println(student);
+
+//     // Additional calculations (optional)
+//     System.out.println("Total Marks: " + student.getTotalMarks());
+//     System.out.println("Overall Percentage: " + student.getOverallPercentage() + "%");
+//     System.out.println("Passed: " + student.isPassed());
+        
+       
+//     }
+// }
+//  class Student {
+
+//   private String studentID;
+//   private String name;
+//   private String department;
+//   private Subject[] enrolledSubjects;
+
+//   public Student(String studentID, String name, String department) {
+//     this.studentID = studentID;
+//     this.name = name;
+//     this.department = department;
+//     this.enrolledSubjects = new Subject[0]; // Initialize empty array
+//   }
+
+//   public String getStudentID() {
+//     return studentID;
+//   }
+
+//   public String getName() {
+//     return name;
+//   }
+
+//   public String getDepartment() {
+//     return department;
+//   }
+
+//   public Subject[] getEnrolledSubjects() {
+//     return enrolledSubjects; // Consider returning a copy if mutability is a concern
+//   }
+
+//   // Method to enroll student in a subject (assuming no duplicates)
+//   public void enroll(Subject subject) {
+//     Subject[] updatedSubjects = new Subject[enrolledSubjects.length + 1];
+//     System.arraycopy(enrolledSubjects, 0, updatedSubjects, 0, enrolledSubjects.length);
+//     updatedSubjects[updatedSubjects.length - 1] = subject;
+//     enrolledSubjects = updatedSubjects;
+//   }
+
+//   // Method to set marks for a specific subject enrolled by the student
+//   public void setMarks(String subjectID, int marks) {
+//     for (Subject subject : enrolledSubjects) {
+//       if (subject.getSubID().equals(subjectID)) {
+//         subject.setMarksObtain(marks);
+//         return; // Marks set, exit the loop
+//       }
+//     }
+//     System.out.println("Subject with ID " + subjectID + " not found for student " + studentID);
+//   }
+
+//   // Calculate total marks obtained by the student across all subjects
+//   public int getTotalMarks() {
+//     int totalMarks = 0;
+//     for (Subject subject : enrolledSubjects) {
+//       totalMarks += subject.getMarksObtains();
+//     }
+//     return totalMarks;
+//   }
+
+//   // Calculate overall percentage (assuming all subjects have same weightage)
+//   public double getOverallPercentage() {
+//     int totalMarks = getTotalMarks();
+//     int totalMaxMarks = 0;
+//     for (Subject subject : enrolledSubjects) {
+//       totalMaxMarks += subject.getMaxMarks();
+//     }
+//     if (totalMaxMarks == 0) {
+//       return 0.0; // Avoid division by zero
+//     }
+//     return (double) totalMarks / totalMaxMarks * 100;
+//   }
+
+//   // Check if student is passed (based on your definition in Subject.isQualified)
+//   public boolean isPassed() {
+//     for (Subject subject : enrolledSubjects) {
+//       if (!subject.isQualified()) {
+//         return false;
+//       }
+//     }
+//     return true;
+//   }
+
+//   @Override
+//   public String toString() {
+//     StringBuilder sb = new StringBuilder();
+//     sb.append("\nStudent ID: ").append(studentID).append("\n");
+//     sb.append("Name: ").append(name).append("\n");
+//     sb.append("Department: ").append(department).append("\n");
+//     sb.append("Enrolled Subjects:\n");
+//     for (Subject subject : enrolledSubjects) {
+//       sb.append(subject).append("\n");
+//     }
+//     return sb.toString();
+//   }
+// }
+//////---------------------------------------------------------
+
+//     class Student {
+//         private String rollNo;
+//         private String name;
+//         private String dept;
+//         private Subject subjects[];
+
+
+//         public Student(String rollNo, String name, String dept){
+//             rollNo = this.rollNo;
+//             name = this.name;
+//             dept = this.dept;
+          
+
+//         }
+
+//         public String getRollNo() {
+//             return rollNo;
+//         }
+
+       
+
+//         public String getName() {
+//             return name;
+//         }
+
+//         public void setName(String name) {
+//             this.name = name;
+//         }
+
+//         public String getDept() {
+//             return dept;
+//         }
+
+//         public void setDept(String dept) {
+//             this.dept = dept;
+//         }
+
+//         public String[] getSubjects() {
+//             return subjects;
+//         }
+
+//         public void setSubjects(String ...subjects) {
+//             this.subjects = subjects;
+//         }
+
+//         public String toString(){
+//             return "\n Student rollNo: "+rollNo+"\n Name "+name+"\n MarksObtained "+getSubjects;
+//         }
+//     }
+///////////////////////////////////
+//     class Subject {
+//   private String name;
+//   private String description;
+
+//   public Subject(String name, String description) {
+//     this.name = name;
+//     this.description = description;
+//   }
+
+//   public String getName() {
+//     return name;
+//   }
+
+//   public String getDescription() {
+//     return description;
+//   }
+// }
+//  class Student {
+//   private String name;
+//   private int id;
+//   // List of enrolled subjects (replace with an appropriate data structure like ArrayList if needed)
+//   private Subject[] enrolledSubjects;
+
+//   public Student(String name, int id) {
+//     this.name = name;
+//     this.id = id;
+//     this.enrolledSubjects = new Subject[0]; // Initialize empty array
+//   }
+
+//   public String getName() {
+//     return name;
+//   }
+
+//   public int getId() {
+//     return id;
+//   }
+
+//   // Method to enroll student in a subject (assuming no duplicates)
+//   public void enroll(Subject subject) {
+//     Subject[] updatedSubjects = new Subject[enrolledSubjects.length + 1];
+//     System.arraycopy(enrolledSubjects, 0, updatedSubjects, 0, enrolledSubjects.length);
+//     updatedSubjects[updatedSubjects.length - 1] = subject;
+//     enrolledSubjects = updatedSubjects;
+//   }
+
+//   // Method to get enrolled subjects (consider using an accessor method returning a copy if mutability is a concern)
+//   public Subject[] getEnrolledSubjects() {
+//     return enrolledSubjects;
+//   }
+// }
+
+// public class Main {
+//   public static void main(String[] args) {
+//     // Create some subjects
+//     Subject math = new Subject("Math", "Introduction to Algebra and Geometry");
+//     Subject science = new Subject("Science", "Exploration of the natural world");
+//     Subject history = new Subject("History", "A journey through human civilization");
+
+//     // Create some students
+//     Student john = new Student("John Doe", 1001);
+//     Student jane = new Student("Jane Smith", 1002);
+
+//     // Enroll students in subjects
+//     john.enroll(math);
+//     john.enroll(science);
+//     jane.enroll(history);
+//     jane.enroll(math);
+
+//     // Print student information
+//     System.out.println("Student: " + john.getName() + " (ID: " + john.getId() + ")");
+//     System.out.println("Enrolled Subjects:");
+//     for (Subject subject : john.getEnrolledSubjects()) {
+//       System.out.println("  - " + subject.getName() + ": " + subject.getDescription());
+//     }
+
+//     System.out.println("\nStudent: " + jane.getName() + " (ID: " + jane.getId() + ")");
+//     System.out.println("Enrolled Subjects:");
+//     for (Subject subject : jane.getEnrolledSubjects()) {
+//       System.out.println("  - " + subject.getName() + ": " + subject.getDescription());
+//     }
+//   }
+// }
+
+////////////////////////////////////////
+// class Subject {
+//   private String name;
+//   private String description;
+//   private int maxMarks;
+
+//   public Subject(String name, String description, int maxMarks) {
+//     this.name = name;
+//     this.description = description;
+//     this.maxMarks = maxMarks;
+//   }
+
+//   public String getName() {
+//     return name;
+//   }
+
+//   public String getDescription() {
+//     return description;
+//   }
+
+//   public int getMaxMarks() {
+//     return maxMarks;
+//   }
+// }
+
+//  class Student {
+//   private String name;
+//   private int id;
+//   // Map subject to obtained marks (more efficient for retrieval by subject)
+//   private Map<Subject, Integer> enrolledSubjects;
+
+//   public Student(String name, int id) {
+//     this.name = name;
+//     this.id = id;
+//     this.enrolledSubjects = new HashMap<>();
+//   }
+
+//   public String getName() {
+//     return name;
+//   }
+
+//   public int getId() {
+//     return id;
+//   }
+
+//   // Enroll student in a subject with obtained marks (assuming no duplicates)
+//   public void enroll(Subject subject, int marks) {
+//     enrolledSubjects.put(subject, marks);
+//   }
+
+//   // Method to get marks obtained in a specific subject
+//   public Integer getMarks(Subject subject) {
+//     return enrolledSubjects.get(subject);
+//   }
+// }
+
+// public class Main {
+//   public static void main(String[] args) {
+//     // Create some subjects
+//     Subject math = new Subject("Math", "Introduction to Algebra and Geometry", 100);
+//     Subject science = new Subject("Science", "Exploration of the natural world", 150);
+//     Subject history = new Subject("History", "A journey through human civilization", 75);
+
+//     // Create some students
+//     Student john = new Student("John Doe", 1001);
+//     Student jane = new Student("Jane Smith", 1002);
+
+//     // Enroll students in subjects with marks
+//     john.enroll(math, 85);
+//     john.enroll(science, 120);
+//     jane.enroll(history, 68);
+//     jane.enroll(math, 92);
+
+//     // Print student information
+//     System.out.println("Student: " + john.getName() + " (ID: " + john.getId() + ")");
+//     System.out.println("Enrolled Subjects:");
+//     for (Subject subject : john.enrolledSubjects.keySet()) {
+//       Integer marks = john.getMarks(subject);
+//       System.out.println("  - " + subject.getName() + ": " + marks + " / " + subject.getMaxMarks());
+//     }
+
+//     System.out.println("\nStudent: " + jane.getName() + " (ID: " + jane.getId() + ")");
+//     System.out.println("Enrolled Subjects:");
+//     for (Subject subject : jane.enrolledSubjects.keySet()) {
+//       Integer marks = jane.getMarks(subject);
+//       System.out.println("  - " + subject.getName() + ": " + marks + " / " + subject.getMaxMarks());
+//     }
+//   }
+// }
+
+//////////////////////////////////////////////////////////
+//
+// import java.util.*;
+// import java.time.*;
+
+// class Main{
+//     public static void main(String args[]){
+//         // Date d = new Date();
+//         // System.out.println(d);
+
+//         Human babyboy = new Human(new Date(),"Sanjana","Sanju");
+//         System.out.println(babyboy);
+//         System.out.println(LocalTime.now());
+
+//         //ZonedDateTime from specific Calendar
+// 		ZonedDateTime gregorianCalendarDateTime = new GregorianCalendar().toZonedDateTime();
+// 		System.out.println(gregorianCalendarDateTime);
+
+//     }
+// }
+
+// class Human {
+//     private String name;
+//     private String motherName;
+//     private String fatherName;
+//     private Date dob;
+//     private float height;
+//     private float weight;
+//     // private Education edu;
+
+//     public Human(Date dob,String motherName, String fatherName){
+//         this.dob = dob;
+//         this.motherName = motherName;
+//         this.fatherName = fatherName;
+//     }
+
+//     public String toString(){
+//         return "\nBady DOB : "+dob+"\n Mother Name : "+motherName+"\n Father Name : "+fatherName;
+//     }
+// }
+
+///////////////////////////////////////////////
+////Interface
+
+// interface Member{
+//     void callback();
+// }
+
+// class Customer implements Member{
+//     String name;
+
+//     Customer(String s){
+//         name = s;
+//     }
+
+//     public void callback(){
+//         System.out.println("Ok, I will visit "+name);
+//     }
+
+// }
+
+// class Store{
+//     Member mem[] = new Member[100];
+//     int count = 0;
+
+//     void register(Member m)
+//     {
+//         mem[count++] = m;
+//     }
+
+//     void inviteSale(){
+//         for(int i=0;i<count;i++)
+//             mem[i].callback();
+//     }
+// }
+
+// class Main{
+//     public static void main(String args[]){
+//         Store s = new Store();
+//         Customer c1 = new Customer("sid");
+//         Customer c2 = new Customer("aakash");
+//         s.register(c1);
+//         s.register(c2);
+
+//         s.inviteSale();
+//     }
+// }
+
+///////////////////////////
+// import java.util.Date;
+
+// class Student
+// {
+//     private String rollNo;
+    
+//     private static int count=1;
+    
+//     private String assignRollNo()
+//     {
+//         Date d=new Date();
+        
+//         //.getYear() is deprecated.
+//         String rno="Univ-"+(d.getYear()+1900)+"-"+count; //add 1900 to get current year.
+//         count++;
+//         return rno;
+//     }
+//     Student()
+//     {
+//         rollNo=assignRollNo();
+//     }
+//     public String getRollNo()
+//     {
+//         return rollNo;
+//     }
+    
+// }
+
+// public class Main
+// {
+//     public static void main(String[] args) 
+//     {
+//         Student s1=new Student();
+//         Student s2=new Student();
+//         Student s3=new Student();
+        
+//         System.out.println(s1.getRollNo());
+//         System.out.println(s2.getRollNo());
+//         System.out.println(s3.getRollNo());
+        
+//     }   
+// }
+
+
+/////////////MULTI THREADING////////////////////////////
+//////////////
+// class Main extends Thread{
+
+//     public void run(){
+//          int i=0;
+//         while(true){
+//             System.out.println(i+"  WORLD");
+//             i++;
+//         }
+//     }
+
+//     public static void main(String args[]){
+      
+//         Main t = new Main();
+//         t.start();
+//         int i=0;
+//         while(true){
+//             System.out.println(i+"  Hello");
+//             i++;
+//         }
+
+//     }
+// }
+
+
+////////PRODUCER AND CONSUMER
+// package interprocess;
+
+// class MyData
+// {
+//     int value;
+//     boolean flag=true;
+    
+//     synchronized public void set(int v)
+//     {
+//         while(flag!=true)
+//             try {wait();}catch(Exception e){}
+        
+//         value=v;
+//         flag=false;
+//         notify();
+//     }
+    
+//     synchronized public int get()
+//     {
+//         int x=0;
+//         while(flag!=false)
+//             try {wait();}catch(Exception e){}
+        
+        
+//         x=value;
+//         flag=true;
+//         notify();
+        
+//         return x;            
+//     }
+// }
+
+// class Producer extends Thread
+// {
+//     MyData data;
+    
+//     public Producer(MyData d)
+//     {
+//         data=d;
+//     }
+//     public void run()
+//     {
+//         int count=1;
+//         while(true)
+//         {
+//             data.set(count);
+//             System.out.println("Producer "+count);
+//             count++;
+//         }
+//     }
+// }
+
+// class Consumer extends Thread
+// {
+//     MyData data;
+    
+//     public Consumer(MyData d)
+//     {
+//         data=d;
+//     }
+//     public void run()
+//     {
+//         int value;
+//         while(true)
+//         {
+//             value=data.get();
+//             System.out.println("Consumer "+value);
+//         }
+//     }
+// }
+
+// public class InterProcess 
+// {
+//     public static void main(String[] args) 
+//     {
+//         MyData data=new MyData();
+        
+//         Producer p=new Producer(data);
+//         Consumer c=new Consumer(data);
+        
+//         p.start();
+//         c.start();
+        
+//     }
+// }
+
+// //////////////////
+// package scthread2;
+
+
+
+// class WhiteBoard
+// {
+//     String text;
+//     int numberOfStudents=0;
+//     int count=0;
+//     public void attendance()
+//     {
+//         numberOfStudents++;
+//     }
+    
+//     synchronized public void write(String t)
+//     {
+//         System.out.println("Teacher is Writing " +t);
+//         while(count!=0)
+//                 try{wait();}catch(Exception e){}
+//         text=t;
+//         count=numberOfStudents;
+//         notifyAll();
+
+//     }
+//     synchronized public String read()
+//     {
+        
+//         while(count==0)
+//                 try{wait();}catch(Exception e){}
+            
+//         String t=text;
+//         count--;
+//         if(count==0)
+//                 notify();
+//         return t;
+//     }
+    
+// }
+// class Teacher extends Thread
+// {
+//     WhiteBoard wb;
+    
+//     String notes[]={"Java is language","It is OOPs","It is Platform Independent","It supports Thread","end"};
+    
+//     public Teacher(WhiteBoard w)
+//     {
+//         wb=w;
+//     }
+    
+//     public void run()
+//     {
+//         for(int i=0;i<notes.length;i++)
+//             wb.write(notes[i]);
+//     }          
+    
+// }
+
+// class Student extends Thread
+// {
+//     String name;
+//     WhiteBoard wb;
+//     public Student(String n,WhiteBoard w)
+//     {
+//         name=n;
+//         wb=w;
+//     }
+    
+//     public void run()
+//     {
+//         String text;
+//         wb.attendance();
+                
+//         do
+//         {
+//             text=wb.read();
+//             System.out.println(name + " Reading " + text);
+//             System.out.flush();
+//         }while(!text.equals("end"));
+//     }
+    
+// }
+
+
+// public class SCThread2 
+// {
+//     public static void main(String[] args) 
+//     {
+//         WhiteBoard wb=new WhiteBoard();
+//         Teacher t=new Teacher(wb);
+        
+//         Student s1=new Student("1. John",wb);
+//         Student s2=new Student("2. Ajay",wb);
+//         Student s3=new Student("3. Kloob",wb);
+//         Student s4=new Student("4. Smith",wb);
+        
+//         t.start();
+        
+//         s1.start();
+//         s2.start();
+//         s3.start();
+//         s4.start();
+        
+//     }   
+// }
+
+
+// public class Main {
+
+//     public static void main(String[] args) {
+        
+//         int m1=15;
+        
+//         //Integer m2=m1;
+//         //Integer m3=15;
+        
+//         Integer m2=Integer.valueOf("123");
+//         //Integer m3=Integer.valueOf("11111111", 2);//255
+//         Integer m3=Integer.valueOf("A7", 16);//167 //16*10+7=167
+//         Integer m4=Integer.decode("0xA7");//true //hexa to decimal
+        
+//         //System.out.println(m2.equals(m1));
+//         //System.out.println(m2.equals(m3));
+//         //System.out.println(m3);
+        
+//         //System.out.println(Integer.parseInt("123")); //converts into a number.
+//         //System.out.println(Integer.parseInt("123a")); //NumberFormatException
+
+
+//         //System.out.println(Integer.reverseBytes(128)==Integer.MIN_VALUE);
+//         System.out.println(Integer.);
+//         System.out.println(Integer.toBinaryString(40));
+        
+//     }
+    
+// }
+
+
