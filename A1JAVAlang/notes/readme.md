@@ -4910,3 +4910,640 @@ public class FileExample {
 computer works mostly in bytes so we work with input and output streams.
 
 
+## 218 FileInputStream & FileReader
+![alt text](image-537.png)
+
+![alt text](image-538.png)
+
+```java 
+package fileexample;
+
+import java.io.*;
+
+public class FileExample {
+
+    public static void main(String[] args) throws Exception
+    {
+        
+        try(FileOutputStream fos=new FileOutputStream("C:/MyJava/Test.txt");)
+        {
+        
+        String str="earn Java Programming.";
+        
+        byte b[]=str.getBytes();
+        
+        /*
+        //fos.write(str.getBytes());
+        for(byte x:b)
+            fos.write(x);*/
+        //fos.write(b, 6, str.length()-6);
+        
+        fos.write(b);
+        
+        //fos.close();
+        
+        }
+        /*catch(FileNotFoundException e)
+        {
+            System.out.println(e);
+        }
+        catch(IOException e)
+        {
+            System.out.println(e);
+        }*/
+    }
+    
+}
+```
+![alt text](image-539.png)
+
+commonly used
+![alt text](image-540.png)
+FileReader
+![alt text](image-541.png)
+
+## 219 sc: copy a file data to another.
+![alt text](image-542.png)
+
+```java
+package scio1;
+
+import java.io.*;
+
+public class SCIO1 
+{
+    public static void main(String[] args) throws Exception
+    {
+        
+        FileInputStream fis1=new FileInputStream("Source1.txt");
+        FileInputStream fis2=new FileInputStream("Source2.txt");
+        
+        FileOutputStream fos=new FileOutputStream("Destination.txt");
+                
+        SequenceInputStream sis=new SequenceInputStream(fis1,fis2);
+        
+        
+        int b;
+        while((b=sis.read())!=-1)
+        {
+            
+            fos.write(b);
+        }
+        
+        sis.close();
+        fis1.close();
+        fis2.close();
+        fos.close();
+        
+    }   
+}
+```
+
+## Byte Stream
+![alt text](image-543.png)
+
+![alt text](image-544.png)
+
+if byte array stream is comming from stream
+![alt text](image-545.png)
+
+for files it is not supported
+mark is supported on byte. it means we can go forward and backward to read or write data.
+![alt text](image-546.png)
+o/p: true
+
+![alt text](image-547.png)
+stored in the form of bytes
+![alt text](image-548.png)
+
+![alt text](image-549.png)
+char 
+![alt text](image-550.png)
+practice char array writer.
+
+## 221 Buffered Stream & Buffered Reader
+![alt text](image-551.png)
+
+![alt text](image-552.png)
+benefits of using the buffered
+![alt text](image-553.png)
+
+buffer
+![alt text](image-554.png)
+
+![alt text](image-555.png)
+![alt text](image-556.png)
+Readers are used for characters
+InputStreams are used for bytes
+
+![alt text](image-557.png)
+
+## Piped Streams
+(eg.in multithreading > inter thread communication)
+Here,
+separate thread for P and C
+they share the data through the pipes.
+![alt text](image-558.png)
+
+```java
+
+package pipeddemo;
+
+import java.io.*;
+
+class Producer extends Thread
+{
+    OutputStream os;
+    
+    public Producer(OutputStream o)
+    {
+        os=o;
+    }
+    
+    public void run()
+    {
+        int count=1;
+        
+        while(true)
+        {
+            try{
+            os.write(count);
+            os.flush();
+            
+            System.out.println("Producer "+count);
+            System.out.flush();
+
+            Thread.sleep(10);
+            count++;
+            }catch(Exception e){}
+        }
+    }
+    
+}
+
+class Consumer extends Thread
+{
+    InputStream is;
+    
+    public Consumer(InputStream s)
+    {
+        is=s;
+    }
+    
+    public void run()
+    {
+        int x;
+        
+        while(true)
+        {
+            try{
+            
+                x=is.read();
+            
+            System.out.println("Consumer "+x);
+            System.out.flush();
+            Thread.sleep(10);
+
+            }catch(Exception e){}
+        }
+    }
+    
+}
+
+
+
+public class PipedDemo 
+{
+    public static void main(String[] args) throws Exception
+    {
+       PipedInputStream pis=new PipedInputStream();
+       PipedOutputStream pos=new PipedOutputStream();
+       
+       pos.connect(pis);//pis.connect(pos); both are same.
+       
+       Producer p=new Producer(pos);
+       Consumer c=new Consumer(pis);
+       
+       p.start();
+       
+       c.start();
+       
+    }  
+}
+```
+
+
+## Random Access File
+
+![alt text](image-560.png)
+seek(3)
+![alt text](image-561.png)
+![alt text](image-562.png)
+![alt text](image-563.png)
+A
+B
+C
+E
+
+![alt text](image-564.png)
+![alt text](image-565.png)
+get current file pointer position
+![alt text](image-566.png)
++2 and ... possible
+
+## 224 File Class
+to access the properties of the files.
+
+```java
+//check about the File class
+package filehandling;
+import java.io.*;
+
+public class FileHandling 
+{
+    public static void main(String[] args) throws Exception
+    {
+        // select path of any directory on you computer
+       File f=new File("C:\\MyJava");
+       
+       System.out.println(f.isDirectory());
+       File list[]=f.listFiles();
+        
+       for(File x:list)
+       {
+           System.out.println(x.getParent()+" "+x.getName());
+       }
+      
+    }
+}
+```
+
+## Serialization : storing data into file
+=(to remember) pencil, scale , rubber, sharpner and box 
+everything is stored in the form of strings. below
+![alt text](image-567.png)
+![alt text](image-568.png)
+
+![alt text](image-569.png)
+
+bridge class
+type casting won't works here. so parse int is used.
+![alt text](image-570.png)
+
+## 227. Serialization : using DataInput and DataOutput Stream
+formatted storing as per their data types
+![alt text](image-571.png)
+
+![alt text](image-572.png)
+
+
+## 228. Data Streams
+
+![alt text](image-573.png)
+
+```java
+package datastreamdemo;
+import java.io.*;
+
+class Student
+{
+    int rollno;
+    String name;
+    float avg;
+    String dept;
+}
+public class DataStreamDemo 
+{
+    public static void main(String[] args)throws Exception
+    {
+        //writing in a file
+        FileOutputStream fos=new FileOutputStream("Student2.txt");
+        DataOutputStream dos=new DataOutputStream(fos);
+        
+        Student s1=new Student();
+        s1.rollno=10;
+        s1.name="John";
+        s1.dept="CSE";
+        s1.avg=75.9f;
+        dos.writeInt(s1.rollno);
+        dos.writeUTF(s1.name);
+        dos.writeUTF(s1.dept);
+        dos.writeFloat(s1.avg);
+        dos.close();
+        fos.close();
+        
+        
+        //reading from file
+        FileInputStream fis=new FileInputStream("Student2.txt");
+        DataInputStream dis=new DataInputStream(fis);
+        
+        Student s=new Student();
+        
+        s.rollno=dis.readInt();
+        
+        s.name=dis.readUTF();
+        
+        s.dept=dis.readUTF();
+        s.avg=dis.readFloat();
+        
+        System.out.println("Roll no "+s.rollno);
+        System.out.println("Name "+s.name);
+        System.out.println("Average "+s.avg);
+        System.out.println("Dept "+s.dept);
+        
+        
+        dis.close();
+        fis.close();
+    }
+}
+``` 
+boxes means binary
+if ur able to read all whole things then it is string format
+otherwise it is binary format.
+
+## 229 Serialization
+=serialization is the process of storing the state of the object and it's data into the file.
+restoring the object from the file is known as the deserialization.
+this is done throught the 'objectInputStream and ObjectOutputStream' classes.
+![alt text](image-574.png)
+![alt text](image-575.png)
+
+![alt text](image-576.png)
+it has to implements the serialiable
+![alt text](image-577.png)
+
+
+![alt text](image-578.png)
+
+
+![alt text](image-579.png)
+## 230 Object Streams and Serialization
+```java
+package objectdemo;
+import java.io.*;
+
+class Student implements Serializable
+{
+    private int rollno;
+    private String name;
+    private float avg;
+    private String dept;
+    public static int Data=10; //static variable is not serialized //not stored in the file
+    public transient int t; //transient variable is not serialized //not stored in the file
+    public volatile int v; //volatile is serialized //stored in the file //check once.
+    
+    public Student() //without this gets error. InvalidClassException // serialVersionUID has to match with deserialized class
+    
+    {
+        
+    
+    {
+        
+    }
+    public Student(int r,String n,float a,String d)
+    {
+        rollno=r;
+        name=n;
+        avg=a;
+        dept=d;
+        Data=500;
+        t=500;
+    }
+    
+    public String toString()
+    {
+        return "\nStudent Details\n"+
+                "\nRoll "+rollno+
+                "\nName "+name+
+                "\nAverage "+avg+
+                "\nDept "+dept+
+                "\nData "+Data+
+                "\nTransient "+t+"\n";
+    }
+    
+}
+
+public class ObjectDemo 
+{
+   /* public static void main(String[] args) throws Exception
+    {
+        FileOutputStream fos=new FileOutputStream("C:\\MyJava\\Student3.txt");
+        ObjectOutputStream oos=new ObjectOutputStream(fos);
+        
+        Student s=new Student(10,"John",89.9f,"CSE");
+        
+        oos.writeObject(s);
+        
+        fos.close();
+        oos.close();
+        
+    }
+    */
+    public static void main(String[] args) throws Exception
+    {
+        FileInputStream fis=new FileInputStream("C:\\MyJava\\Student3.txt");
+        ObjectInputStream ois=new ObjectInputStream(fis);
+        
+        Student s=(Student)ois.readObject();
+        
+        System.out.println(s);
+        
+        fis.close();
+        ois.close();
+        
+    }
+}
+```
+
+## 231. sc : serialize customer IMP IMP
+storing the list of floats into a file and retrive.
+![alt text](image-580.png)
+
+```java
+package scio2;
+import java.io.*;
+
+public class SCIO2 
+{
+    public static void main(String[] args) throws Exception
+    {
+        float list[]={1.2f , 3.45f , 6.78f , 9.01f , 2.34f};
+        
+        FileOutputStream fos=new FileOutputStream("List.txt");
+        DataOutputStream dos=new DataOutputStream(fos);
+        
+        dos.writeInt(list.length);
+        for(float f:list)
+        {
+            dos.writeFloat(f);
+        }
+        
+        dos.close();
+        fos.close();
+        
+        FileInputStream fis=new FileInputStream("List.txt");
+        DataInputStream dis=new DataInputStream(fis);
+        int length=dis.readInt();
+        float data;
+        
+        for(int i=0;i<length;i++)
+        {
+            data=dis.readFloat();
+            System.out.println(data);
+        }
+        dis.close();
+        fis.close();
+        
+    }   
+}
+```
+
+searching
+![alt text](image-581.png)
+![alt text](image-582.png)
+![alt text](image-583.png)
+
+
+![alt text](image-584.png)
+![alt text](image-585.png)
+![alt text](image-586.png)
+
+![alt text](image-587.png)
+
+![alt text](image-588.png)
+
+![alt text](image-589.png)
+
+# Section 24 : Generics
+
+every class is directly or indirectly child of the object class.
+Generalization
+![alt text](image-590.png)
+
+![alt text](image-591.png)
+
+no compile time error
+only runtime error
+![alt text](image-592.png)
+
+Object can be used as the generalization but there are few problems associated as the above image.
+![alt text](image-593.png)
+
+runtime: error 
+![alt text](image-594.png)
+
+![alt text](image-595.png)
+
+![alt text](image-596.png)
+
+## 233 Defining the Generic Class
+![alt text](image-597.png)
+![alt text](image-598.png)
+
+![alt text](image-599.png)
+
+![alt text](image-600.png)
+
+![alt text](image-601.png)
+
+## 234 Bounds of Generics
+![alt text](image-602.png)
+if parameter are not give it becomes object
+![alt text](image-603.png)
+
+2 parameters
+![alt text](image-604.png)
+
+3. Subtypes
+![alt text](image-605.png)
+![alt text](image-606.png)
+
+4. Bounded types
+![alt text](image-607.png)
+
+
+![alt text](image-608.png)
+only extends is used for classes and interfaces
+![alt text](image-609.png)
+
+## 235 Generic Methods IMP
+![alt text](image-610.png)
+before the return type generic type has to be defined
+![alt text](image-611.png)
+
+works for any types of data
+![alt text](image-612.png)
+
+![alt text](image-613.png)
+bound types workds in the generic methods
+![alt text](image-614.png)
+
+![alt text](image-615.png)
+
+![alt text](image-616.png)
+
+can't use T but ?
+unbounded wild card
+![alt text](image-617.png)
+
+wild card with upperbound
+![alt text](image-618.png)
+
+super keyword (understand better with A, B , C classes)
+![alt text](image-619.png)
+
+## 235 Do's and Don't of Generics
+![alt text](image-620.png)
+
+first one must be class
+![alt text](image-621.png)
+![alt text](image-622.png)
+
+![alt text](image-623.png)
+
+not to use , but just hold
+![alt text](image-624.png)
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# Section 25: Collection Framework
+![alt text](image-625.png)
+java program gets data from various place
+like list of values, array of values, database, file, network, etc.
+
+Collections Examples
+=list of objects of students
+Integers
+Floats
+Books
+Customers
+Products
+Accounts
+Movies
+Friends
+
+Array is basic DataStructue.
+int arr[] = new int[5];
+Student std[] = new Student[10];
+type of requirement we have array is not sufficient for data storing.
+so we have to go for the collection framework.
+
+
+![alt text](image-626.png)
+Array size is fixed.You can't change the size of the array.
+copy and reference is changed.(this is the way)
+
+![alt text](image-627.png)
+Collection FW provides ArrayList and LinkedList (variable size collection)
+![alt text](image-628.png)
+
+![alt text](image-629.png)
+
+collection has built in linear , binary searching
+java provides the Hashing and sorting algorithms.
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+# Section 26 : Date and Time API
+
+
+

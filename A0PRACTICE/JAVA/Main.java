@@ -1175,5 +1175,97 @@
 //     }
     
 // }
+/////////////////////////////////
+
+// import java.io.FileOutputStream;
+// import java.io.IOException;
+
+// public class Main{
+//     public static void main(String args[]){
+
+//         try (FileOutputStream fos = new FileOutputStream("C:/fffff.txt")) {
+//             String str  = "Java SE learning";
+
+//             fos.write(str.getBytes());
+//         } catch (IOException e) {
+//             // TODO Auto-generated catch block
+//             e.printStackTrace();
+//         }
+        
+
+//     }
+// }
+
+////////////////////////////////////////////////
+//copy file data to another file
+// import java.io.FileReader;
+
+// class Main{
+//     public static void main(String args[]){
+//         FileReader fr = new FileReader("C:/MyJava/text.txt");
+
+//         fr.read();
+
+//         String str = new String(fr);
+
+//         str = str.toLowerCase();
 
 
+//     }
+// }
+
+///////////////////////////////
+///DATA STREAM
+import java.io.*;
+
+class Student
+{
+    int rollno;
+    String name;
+    float avg;
+    String dept;
+}
+public class Main
+{
+    public static void main(String[] args)throws Exception
+    {
+        //writing in a file
+        FileOutputStream fos=new FileOutputStream("Student2.txt");
+        DataOutputStream dos=new DataOutputStream(fos);
+        
+        Student s1=new Student();
+        s1.rollno=10;
+        s1.name="John";
+        s1.dept="CSE";
+        s1.avg=75.9f;
+        dos.writeInt(s1.rollno);
+        dos.writeUTF(s1.name);
+        dos.writeUTF(s1.dept);
+        dos.writeFloat(s1.avg);
+        dos.close();
+        fos.close();
+        
+        
+        //reading from file
+        FileInputStream fis=new FileInputStream("Student2.txt");
+        DataInputStream dis=new DataInputStream(fis);
+        
+        Student s=new Student();
+        
+        s.rollno=dis.readInt();
+        
+        s.name=dis.readUTF();
+        
+        s.dept=dis.readUTF();
+        s.avg=dis.readFloat();
+        
+        System.out.println("Roll no "+s.rollno);
+        System.out.println("Name "+s.name);
+        System.out.println("Average "+s.avg);
+        System.out.println("Dept "+s.dept);
+        
+        
+        dis.close();
+        fis.close();
+    }
+}
