@@ -5540,10 +5540,567 @@ Collection FW provides ArrayList and LinkedList (variable size collection)
 collection has built in linear , binary searching
 java provides the Hashing and sorting algorithms.
 
+collection framework is which provides the data structures in the java
+java provides the collection framework in the java.util package.
+java provides the collection FW in the form of classes and interfaces
+
+those classes and intefaces are organized in the form of hierarchy.
+owl boxes are interfaces
+rectangular boxes are the classes
+Iterable is the top most interface which has iterator method.
+Collection Inteface
+=collection means group of elements or objects which homogenious or heterogenious.
+**List** means group of elements which are ordered and indexed.
+- so we can insert, update, delete, search the elements.
+- list can have duplicates also
+ArrayList (1.2)
+LinkedList(1.2)
+Vector (legacy classes)(java 1.0 or l.1)
+Stack (legacy classes)(java 1.0 or 1.1)
+
+Set is also a collection
+- set will not allow the duplicates
+- set is unordered and unindexed, but has the unique elements.
+
+Queue follows FIFO mechanism
+
+
+![alt text](image-630.png)
+![alt text](image-631.png)
+
+[5,2,1,4,3]
+
+##
+
+interaces
+![alt text](image-632.png)
+
+![alt text](image-633.png)
+
+## 241 
+
+![alt text](image-634.png)
+
+List has few additional methods thans Collection interface
+Set has the same methods as the Collection interface
+
+![alt text](image-635.png)
+
+![alt text](image-636.png)
+
+## 242 visiting the docs
+search > java 13 util
+list of interfaces 
+below are classes 
+and exceptions
+
+
+## 243 ArrayList & Iterator
+```java
+package listdemo;
+
+import java.util.*;
+
+public class ListDemo {
+
+    public static void main(String[] args) {
+        
+        ArrayList<Integer> al1=new ArrayList<>(20);
+        
+        ArrayList<Integer> al2=new ArrayList<>(List.of(50,60,70,80,90));
+        
+        al1.add(10);
+        al1.add(0,5);
+        //al1.addAll(al2);
+        al1.addAll(1,al2);
+        al1.add(5,70);
+        al1.set(6,100);
+        
+        //al1.forEach(n->System.out.println(n));
+        //al1.forEach(System.out::println);
+        al1.forEach(n->show(n));
+        
+        //System.out.println(al1.contains(25));
+        //System.out.println(al1.get(5));
+        //System.out.println(al1.indexOf(70));
+        //System.out.println(al1.lastIndexOf(70));
+        
+        //System.out.println(al1);
+        
+        /*for(int i=0;i<al1.size();i++)
+            System.out.println(al1.get(i));*/
+        
+        /*for(Integer x:al1)
+            System.out.println(x);*/
+        
+        /*for(Iterator<Integer> it= al1.iterator(); it.hasNext();)
+        {
+            java.lang.Integer x = it.next();
+            System.out.println(x);
+        }*/
+        
+        /*al1.forEach((x)->{
+            System.out.println(x);
+        });*/
+        
+        /*for(Iterator<Integer> it=al1.listIterator();it.hasNext();)
+        while(it.hasNext())
+        {
+            System.out.println(it.next());
+        }*/
+        
+        
+    }
+    
+    static void show(int n)
+    {
+        if(n>60)
+            System.out.println(n);
+    }
+    
+}
+```
+
+## 244 LinkedList
+all the elements should be of same type
+![alt text](image-637.png)
+most flexible of inserting and deleting at any position
+![alt text](image-638.png)
+eg. if there are 4000 elem's or more like that
+which used the doubly linked list (in java)
+
+- linkedlist takes more space than the arraylist
+- no need to  mention size in the linkedlist
+
+.addFirst()
+.addLast()
+```java
+package listdemo;
+
+import java.util.*;
+
+public class ListDemo {
+
+    public static void main(String[] args) {
+        
+        ArrayList<Integer> al1=new ArrayList<>(20);
+        
+        ArrayList<Integer> al2=new ArrayList<>(List.of(50,60,70,80,90));
+        
+        al1.add(10);
+        al1.add(0,5);
+        //al1.addAll(al2);
+        al1.addAll(1,al2);
+        al1.add(5,70);
+        al1.set(6,100);
+        
+        //al1.forEach(n->System.out.println(n));
+        //al1.forEach(System.out::println);
+        al1.forEach(n->show(n));
+        
+        //System.out.println(al1.contains(25));
+        //System.out.println(al1.get(5));
+        //System.out.println(al1.indexOf(70));
+        //System.out.println(al1.lastIndexOf(70));
+        
+        //System.out.println(al1);
+        
+        /*for(int i=0;i<al1.size();i++)
+            System.out.println(al1.get(i));*/
+        
+        /*for(Integer x:al1)
+            System.out.println(x);*/
+        
+        /*for(Iterator<Integer> it= al1.iterator(); it.hasNext();)
+        {
+            java.lang.Integer x = it.next();
+            System.out.println(x);
+        }*/
+        
+        /*al1.forEach((x)->{
+            System.out.println(x);
+        });*/
+        
+        /*for(Iterator<Integer> it=al1.listIterator();it.hasNext();)
+        while(it.hasNext())
+        {
+            System.out.println(it.next());
+        }*/
+        
+        
+    }
+    
+    static void show(int n)
+    {
+        if(n>60)
+            System.out.println(n);
+    }
+    
+}
+```
+
+## 245 ArrayDeque
+=arrayDeque follows Double ended Queue data structure
+![alt text](image-639.png)
+starts from the middle insertion and deletion
+![alt text](image-640.png)
+if array size is full, then it will internally grows the size
+
+all the elements follows constant time complexity
+inserting from last, deleting at first is known as the queue.
+
+inserting first,deleting first is known as the stack.
+
+inserting first and deleting last, then it is a queue.
+
+(if u need stack or queue then use arrayDeque)
+```java
+package dequedemo;
+
+import java.util.*;
+
+public class DequeDemo 
+{   
+    public static void main(String[] args) 
+    {
+         ArrayDeque<Integer> dq=new ArrayDeque<>();
+         
+         dq.offerLast(10);
+         dq.offerLast(20);
+         dq.offerLast(30);
+         dq.offerLast(40);
+         
+         dq.pollFirst();
+         
+         dq.offerLast(1);
+         dq.offerLast(2);
+         dq.offerLast(3);
+         dq.offerLast(4);
+         
+         dq.forEach((x)->System.out.println(x));
+         
+    }    
+}
+```
+
+## 246 Priority Queue
+=Priority Queue is a queue which follows the priority order.
+priority queue is implemented using the heap data structure.
+![alt text](image-641.png)
+![alt text](image-642.png)
+coparator is used to compare the elements
+![alt text](image-644.png)
+![alt text](image-643.png)
+
+
+
+```java
+package prioritydemo;
+
+import java.util.*;
+
+class MyCom implements Comparator<Integer>
+{
+    public int compare(Integer o1,Integer o2)
+    {
+        if(o1<o2)return 1;
+        if(o1>o2) return -1;
+        return 0;
+    }
+}
+
+public class PriorityDemo 
+{
+    public static void main(String[] args) 
+    {
+        PriorityQueue<Integer> p=new PriorityQueue<>(new MyCom());
+        
+        p.add(20);
+        p.add(10);
+        p.add(30);
+        p.add(5);
+        p.add(15);
+        p.add(3);
+        
+        System.out.println(p.peek());
+        
+        p.forEach((x)->System.out.println(x));
+        
+        p.poll();
+        
+        System.out.println("After Deletion");
+        p.forEach((x)->System.out.println(x));
+        
+    }    
+}
+```
+comparator for max-heap
+![alt text](image-645.png)
+![alt text](image-646.png)
+
+
+## 247 hashing Technique
+
+![alt text](image-647.png)
+![alt text](image-648.png)
+
+![alt text](image-649.png)
+![alt text](image-650.png)
+25% blank is called as the load factor
+![alt text](image-651.png)
+
+combination of open address and chaining it used internally. 
+![alt text](image-652.png)
+initial capacity is 16
+
+## HashSet
+set means it doesn't allows the duplicates.
+hash meanst it uses the hash table.
+
+- it takes the constant time.
+
+- by default loadfactor is 0.75
+- you can mention 0.5 if you want.
+
+![alt text](image-682.png)
+
+- if you need to add and remove elems in the constant time then you can take it.
+```java
+package setdemo;
+
+import java.util.*;
+
+public class SetDemo {
+
+    public static void main(String[] args) {
+        
+        HashSet<Integer> hs=new HashSet<>(20,0.75f);
+        
+        hs.add(10);
+        hs.add(20);
+        hs.add(30);
+        hs.add(10);
+        
+        System.out.println(hs);
+    }
+    
+}
+```
+
+## 249. TreeSet.
+tree is a datastructure.
+there are various types of data structures.
+like BST, AVL tree, red trees, black trees, play trees.
+![alt text](image-683.png)
+BST are good at searching log(n) times
+![alt text](image-684.png)
+
+![alt text](image-685.png)
+```java
+package setdemo1;
+
+import java.util.*;
+
+public class SetDemo1 {
+
+    public static void main(String[] args) {
+        
+        TreeSet<Integer> ts=new TreeSet<>(List.of(10,30,50,70,10,40));
+        
+        ts.add(25);
+        
+        //ts.ceiling(55);
+        
+        System.out.println(ts);
+        
+    }
+    
+}
+```
+
+## 250 Comparable Interface
+```java
+package setdemo2;
+
+import java.util.*;
+
+class Point implements Comparable
+{
+    int x;
+    int y;
+    public Point(int x,int y)
+    {
+        this.x=x;
+        this.y=y;
+    }
+    public String toString()
+    {
+        return "x="+x+"y="+y;
+    }
+    public int compareTo(Object o)
+    {
+        Point p=(Point)o;
+        if(this.x<p.x)
+            return -1;
+        else if(this.x>p.x)
+            return 1;
+        else
+        {
+        if(this.y<p.y) 
+            return -1;
+        else if(this.y>p.y)
+            return 1;
+        else 
+            return 0;
+        }
+    }
+}
+
+public class SetDemo2 {
+
+    public static void main(String[] args) {
+        
+        TreeSet<Point> ts=new TreeSet<>();
+        
+        ts.add(new Point(1,1));
+        ts.add(new Point(5,5));
+        ts.add(new Point(5,2));
+        
+        System.out.println(ts);
+    }
+    
+}
+```
+## 250 to 260 pause
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++
 # Section 26 : Date and Time API
+
+## 261 Deprecated Date Class
+![alt text](image-653.png)
+date is represent in long from 1 jan 1970 (starting time)
+(starting calender is 1900)
+![alt text](image-654.png)
+![alt text](image-655.png)
+
+```java
+import java.util.*; //old date class
+class Main{
+    public static void main(String args[]){
+        System.out.println(System.currentTimeMillis()/1000/60/60/24/365.25);
+
+        Date d = new Date();
+        System.out.println(d);
+
+                            // MM/DD/YYYY
+        Date sg = new Date("09/09/2001");
+        System.out.println(sg);
+
+        System.out.println((d.getTime() - sg.getTime())/1000/60/60/24/365.25);
+
+        System.out.println(d.getYear()+1900);
+    }
+}
+```
+
+## 262 Calendar and Time Zone
+java provides the abstarct class called the calender
+solar calender, lunar calender, jewesh calender, arab calender, japanese calender
+globally gregorian calender is used.
+isLeapYear();
+![alt text](image-656.png)
+gc.get(Calender.YEAR); //and a lot of other 
+
+//wikipedia | offset 
+search > timezones
+>list of  timezones
+> list of tz timezones for names
+
+tz.getDisplayName();
+tz.getID();
+
+gc.setTimeZone(TimeZone.getTimeZone("America/Los_Angeles"));
+above all are present in the java 7 
+java 8 gave the separate API
+java.time
+
+
+
+
+
+
+
+## 263 Joda Time API
+![alt text](image-657.png)
+
+![alt text](image-658.png)
+
+
+![alt text](image-659.png)
+2,3,4 are not mutable
+
+![alt text](image-660.png)
+
+![alt text](image-661.png)
+
+![alt text](image-662.png)
+
+![alt text](image-663.png)
+
+![alt text](image-664.png)
+
+![alt text](image-665.png)
+![alt text](image-666.png)
+
+![alt text](image-667.png)
+
+![alt text](image-668.png)
+take in new obj
+![alt text](image-669.png)
+
+![alt text](image-670.png)
+
+## java.time Class
+time zone is not present in LocalDateTime
+classes
+![alt text](image-671.png)
+
+![alt text](image-672.png)
+
+
+![alt text](image-673.png)
+
+![alt text](image-674.png)
+
+![alt text](image-675.png)
+
+![alt text](image-676.png)
+
+instant
+![alt text](image-677.png)
+## 265 Date formatter
+![alt text](image-678.png)
+
+
+![alt text](image-679.png)
+chrono fields
+![alt text](image-680.png)
+![alt text](image-681.png)
 
 
 
