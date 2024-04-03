@@ -239,6 +239,7 @@ but you can call it by the name of the bean of it's class name in small letter o
 ```java
 
 @Qualifier("r") //for RadixSorting bean
+```
 ![alt text](image-16.png)
 
 ## 32 Step 04 - Exploring Spring Framework - Different Types of Dependency Injection
@@ -266,7 +267,7 @@ Lazy is something you would not need to use frequently,
 
 but if you have a lot
 
-of complex initialization logic and if you don't
+of complex initialization logic and if you dont
 
 want it to delay this tied up,
 
@@ -276,7 +277,7 @@ you can think about lazy initialization of Spring Beans.
 
 However, it is very, very important to remember
 
-that if you're making use of lazy initialization errors
+that if you are making use of lazy initialization errors
 
 in spring configuration will not be discovered
 
@@ -285,6 +286,190 @@ at application startup.
 They will become runtime errors.
 
 ## 42. 
+![alt text](image-23.png)
+@Lazy 
+//loads only when it is called
+![alt text](image-24.png)
+value = "PROTOTYPE" 
+
+= instance of normal method is same but different instance of prototype
+
+![alt text](image-25.png)
+![alt text](image-26.png)
+![alt text](image-27.png)
+
+
+![alt text](image-28.png)
+
+![alt text](image-29.png)
+
+
+for next lecture
+/learn-spring-framework-02/src/main/resources/contextConfiguration.xml New
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"> <!-- bean definitions here -->
+	
+ 	
+</beans>
+```
+
+
+## 49
+![alt text](image-31.png)
+![alt text](image-30.png)
+
+![alt text](image-32.png)
+
+![alt text](image-33.png)
+
+individual creation
+![alt text](image-34.png)
+
+![alt text](image-35.png)
+
+![alt text](image-36.png)
+
+
+## 51
+![alt text](image-37.png)
+
+## 52
+Spring Framework needs to identify the beans.
+
+It needs to identify their dependencies
+
+and it would need to wire the dependencies into the beans.
+
+This entire process is what is called dependency injection.
+
+This is also called inversion of control.
+
+Earlier, programmers used to write the code
+
+to create objects to wire objects together
+
+and now the responsibility for creating objects
+
+and binding objects is transferred to the Spring Framework
+
+and that's why this is also called inversion of control.
+
+Now, there are three types of dependency injections:
+
+constructor injection, setter injection
+
+and field injection.
+
+If you're calling a constructor
+
+to inject the dependencies in,
+
+it's called constructor injection.
+
+If you're making use of the setter methods
+
+to inject the dependencies on your beans,
+
+then you're making use of setter injection.
+
+When you don't have a setter or a constructor,
+
+Spring Framework injects the dependency using reflection
+
+and this is called field injection,
+
+IOC container or the inversion of control container.
+
+This is nothing but the Spring inversion of control context
+
+that manages Spring beans and their lifecycle.
+
+The IOC container is responsible for creation
+
+of the beans, their entire life and their termination.
+
+There are two types of Spring IOC containers.
+
+One is BeanFactory, which is a basic Spring IOC container.
+
+And the second type, which is most frequently used,
+
+which is almost used all the time, is application context.
+
+This is advanced Spring IOC container
+
+with enterprise-ready features.
+
+It is easy to use in web applications.
+
+It provides you with internationalization features
+
+and also, it provides good integration with Spring AOP.
+
+Spring beans are nothing
+
+but objects that are managed by Spring.
+
+Any object that is managed
+
+by Spring is called a Spring bean.
+
+And the last terminology is auto-wiring.
+
+Whenever you have Spring beans, they have dependencies.
+
+Spring needs to find the right dependency
+
+and wire it into the bean.
+
+This process is what is called auto-wiring.
+
+
+Spring needs to find the right dependency
+and wire it into the bean.
+This process is what is called auto-wiring.
+
+![alt text](image-38.png)
+
+
+![alt text](image-39.png)
+
+
+![alt text](image-40.png)
+
+![alt text](image-41.png)
+
+---
+
+![alt text](image-42.png)
+![alt text](image-43.png)
+
+![alt text](image-44.png)
+![alt text](image-45.png)
+
+![alt text](image-46.png)
+
+![alt text](image-47.png)
+
+![alt text](image-48.png)
+
+![alt text](image-49.png)
+![alt text](image-50.png)
+
+![alt text](image-51.png)
+
+## How to stay uptodate with technologies evolutions
+![alt text](image-52.png)
+
+![alt text](image-53.png)
+
+
+
 
 
 
@@ -294,24 +479,82 @@ They will become runtime errors.
 ![alt text](image-22.png)
 
 
+# Section 5 : Getting Started with Spring Boot
+
+![alt text](image-54.png)
+![alt text](image-55.png)
 
 
 
 
+## 62
+
+There are two key takeaways as far as I'm concerned.
+
+Number one, spring boot startup projects are
+
+convenient dependency descriptors.
+
+To build a specific kind of application,
+
+you might need set of dependencies.
+
+For example, to build a web application
+
+you need a set of dependencies.
+
+All of these are predefined in startup projects.
+
+Number two is the fact that Spring boot provides you
+
+with a variety of startup projects.
+
+Depending on your use case
+
+you can choose the right startup project.
+
+Now, is it sufficient if I have the right dependencies
+
+in the class path?
+
+Nope.
+
+You need to also configure them.
 
 
+## 63  Step 07 - Understanding Spring Boot Magic - Auto Configuration
 
 
+everthing is auto configured in spring boot autoconfigure jar
+
+## 64 dev tools
 
 
+## 65. Step 09 - Get Production Ready with Spring Boot - 1 - Profiles
 
 
+## 66
+![alt text](image-56.png)
+for the above it is recommended to use class
+![alt text](image-57.png)
 
+gen setters and getters
+![alt text](image-58.png)
 
+![alt text](image-59.png)
 
+So a combination of configuration properties and profiles
 
+in Spring Boot is very, very powerful.
 
+It enables you to externalize all the configuration
 
+that is needed for your application.
+
+## 67
+And typically if you are following an agile approach, then you might be doing multiple deployments
+
+per day.
 
 
 
