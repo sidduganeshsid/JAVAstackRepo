@@ -260,6 +260,7 @@ eg. int room_number, cabin151, _room, $room
 7. we can't use the length more than 255 characters
 8. we can't use the same name for the class and the variable
 9. we can't use the same name for the method and the variable
+![image](https://github.com/sidduganeshsid/JAVAstackRepo/assets/94279014/734d006a-a500-4fe9-89bd-626610847c8a)
 
 int String;
 (above is allowed but not recommended)
@@ -279,6 +280,17 @@ int rollNumberStudent; //allowed (camelCase) //recommended
 class Student{} //allowed (PascalCase) //recommended
 final int PI = 3.14; //allowed (UPPERCASE) //recommended
 
+![image](https://github.com/sidduganeshsid/JAVAstackRepo/assets/94279014/dff7932c-d4f6-4384-9ff0-d2c34b6395b5)
+
+![image](https://github.com/sidduganeshsid/JAVAstackRepo/assets/94279014/c8d0f773-1aa4-46f4-b0dc-c9a7b73a12f6)
+
+integer literal can be represented in various number systems.
+decimal
+binary
+octal 
+hexadecimal
+![image](https://github.com/sidduganeshsid/JAVAstackRepo/assets/94279014/7d6cdeff-124c-413f-8d58-d425674db832)
+![image](https://github.com/sidduganeshsid/JAVAstackRepo/assets/94279014/ab32c374-ffcc-4491-a74c-626fc198c843)
 
 ## 15. Integra Data Types in Detail
 
@@ -298,6 +310,7 @@ in 7 bits what is the least value can be stored is -128
 in 7 bits what is the max value can be stored is 127
 7th bit is used for the sign
 ![alt text](image-13.png)
+
 
 ## 16. check binary bits of an integer
 to see the binary bits of the integer we can use the wrapper class method toBinaryString()
@@ -359,10 +372,10 @@ float f=35.6; it is invalid. 35.6 is a double literal. it should be float f=35.6
 ## 23. Compiler vs Interpreter
 interpreter and compiler are used for translating our programs into the machine language and executing them
 
-compiler translates the entire program at once and then executes the program
+compiler translates the entire program at once and then executes the program. separate compiled file is created.
 
-interpreter translates the program line by line and then executes the program
-
+interpreter translates the program line by line and then executes the program.each time translation is done during execution.
+(line by line translation and execution.)
 interpreter language are easy to debug and learn
 compiler languages are fast and efficient and difficult to debug
 java is both compiled and interpreted language
@@ -375,6 +388,23 @@ program makes the system calls to the OS.
 in java the system calls are made by the JVM
 
 JVM and byte code makes the java platform independent.
+![image](https://github.com/sidduganeshsid/JAVAstackRepo/assets/94279014/e5bcb8d7-4fe5-41ed-956f-2090a1ba6a5e)
+![image](https://github.com/sidduganeshsid/JAVAstackRepo/assets/94279014/d0d0b8ba-d400-495a-9f14-71d308b84d1e)
+![image](https://github.com/sidduganeshsid/JAVAstackRepo/assets/94279014/38be9c08-35af-4115-8f92-f42f2c02fabc)
+program uses the resources via OS
+![image](https://github.com/sidduganeshsid/JAVAstackRepo/assets/94279014/31679689-05c9-4ed3-ad26-be7239f756d7)
+
+WRITE ONCE RUN ANYWHERE
+![image](https://github.com/sidduganeshsid/JAVAstackRepo/assets/94279014/94ef29b2-cc7e-45f1-a06f-83416658cc7b)
+Byte code and JVM makes the JAVA platform independent.
+![image](https://github.com/sidduganeshsid/JAVAstackRepo/assets/94279014/c91e5dd0-cb68-41f2-87c4-4f4c02bdf0d2)
+
+eg
+c++
+![image](https://github.com/sidduganeshsid/JAVAstackRepo/assets/94279014/c6feef82-d6d2-41d6-b0a4-fd7c0c995410)
+![image](https://github.com/sidduganeshsid/JAVAstackRepo/assets/94279014/8883f31f-cd2b-4157-975c-33f900943565)
+
+
 
 ## 26. JVM Architecture
 => Class Loader Subsystem
@@ -400,18 +430,19 @@ external
 ![alt text](image-18.png)
 
 {
-Application class loader loads the classes (our classess) whatever we are using in our program
+3)Application class loader loads the classes (our classess) whatever we are using in our program
 
-bootstrap class loader loads the classes which are present in the rt.jar file
-
-extension class loader loads the classes which are present in the ext folder
+below boths loads the runtime required classes for the JVM
+1)bootstrap class loader loads the classes which are present in the rt.jar file (jre>lib (rt.jar) >ext dir )
+2)extension class loader loads the classes which are present in the ext folder
 }
+whichever class is loaded then its object is created inside the heap area (methods are loaded inside the loading area)= Reflection API
 
 {
 Linking is the process of combining the code of the class with the code of the other classes
-verify checks the byte code is valid or not (secure)
-prepare allocates the memory for the static variables and initializes the default values
-resolve replaces the symbolic references with the direct references (actual linking of the code happens here)
+1)VERIFY checks the byte code is valid or not (secure) (byte code is perfect byte code or not)(if problem or different pattern or secure of not)
+2)PREPARE allocates the memory for the static variables and initializes the default values
+3)RESOLVE replaces the symbolic references with the direct references (actual linking of the code happens here)
 }
 
 {
@@ -435,8 +466,10 @@ Garbage collector (execution engine) is the part of the memory area which is use
 8. Interpreted (java is interpreted because of the JVM)
 9. High Performance (java is high performance because of the JIT compiler)
 10. Distributed (java is distributed because of the RMI and EJB) (RMI is used for the remote method invocation and EJB is used for the enterprise java beans) (RMI and EJB are outdated) (spring framework is used in modern days and spring boot is used for the microservices)
-11. Dynamic (java is dynamic because of the reflection and the class loader)
+11. Dynamic (java is dynamic because of the reflection and the class loader)(running form of the program from one machine to another machine is possible)
+![image](https://github.com/sidduganeshsid/JAVAstackRepo/assets/94279014/cc6d4cf6-747b-4698-bbcb-5ed1b187ca67)
 
+![image](https://github.com/sidduganeshsid/JAVAstackRepo/assets/94279014/6b534fce-f9e2-49a5-bfb0-2c942a3fe381)
 
 # Section 5: operators and expressions 
 ## 29.Arithmetic operators and expressions
@@ -455,8 +488,13 @@ class Main{
     }
 }
 ```
+p)area of triangle (2 ways)
+p)roots of quadratic equation
+1 1 1 = NaN
+1 -4 4 = 2 2
+1 5 6 = -2 -3
 
-<!-- 
+
 java 8 mention all topics below
 lambda expression
 functional interface
@@ -486,7 +524,7 @@ Base64 encoding and decoding support
 Nashorn JavaScript engine for embedded scripting
 Improvements to concurrency and IO APIs
 These are some of the major features introduced in Java 8 that have significantly impacted Java development. They have made Java code more concise, readable, and expressive, enabling developers to write more functional and efficient programs.
- -->
+ 
 
 **coercion** is the process of converting the data from one type to another type
 ![alt text](image-19.png)
@@ -500,6 +538,9 @@ These are some of the major features introduced in Java 8 that have significantl
 1 1 1 Nan
 1 -4 4 2 2
 1 5 6 -2 -3
+
+p) cuboid 
+2*(lb+lh+bh);
 
 INCREMENT AND DECREMENT OPERATORS
 ![alt text](image-21.png)
@@ -515,6 +556,19 @@ class Main{
     }
 }
 ```
+check
+```java
+class Main{
+    public static void main(String args[]){
+        byte b = 5;
+        b = b+1;
+        System.out.println(b);
+        
+    }
+}
+```
+
+
 when arithematic operations performed on byte the result will be int
 when arithematic operations performed on short the result will be int
 ![alt text](image-22.png)
@@ -633,6 +687,10 @@ order of taking arguments
 float width and precesion
 ![alt text](image-60.png)
 
+float
+![image](https://github.com/sidduganeshsid/JAVAstackRepo/assets/94279014/cda88990-3cfb-48c2-8cc5-2c01a97a167b)
+
+
 ## 45. String Object
 
 String is a builtin class available in the java.lang package and it is immutable. used like a data type.
@@ -651,13 +709,14 @@ String s = new String(c);
 byte b[] = {65,66,67,68};
 String s1 = new String(b);
 //converted to string0
-
+constructor is called once object is created.
 String s2 = new String("Java Programming"); // 2 objects are created
 
 String s3 = "Java Programming";
 //string literal is created in the string pool
+![image](https://github.com/sidduganeshsid/JAVAstackRepo/assets/94279014/d6ce3977-37a8-457b-ba3d-28ed6724a002)
 
-java mains the string pool for the string literals
+java maintains the string pool for the string literals
 
 >javap java.lang.String
 
