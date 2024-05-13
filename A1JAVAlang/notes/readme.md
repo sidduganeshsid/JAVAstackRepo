@@ -3332,8 +3332,39 @@ exception : program will be terminate abnormally.
 
 ## 168. Try and catch block
 
+package exceptiondemo;
 
+import java.util.Scanner;
 
+public class ExceptionDemo 
+{
+    public static void main(String[] args) 
+    {
+        int a,b,c;
+        
+        Scanner sc=new Scanner(System.in);
+        
+        System.out.println("Eneter 2 numbers");
+        a=sc.nextInt();
+        b=sc.nextInt();
+        
+        
+        try
+        {
+            c=a/b;
+            System.out.println("Division is" +c);
+        }
+        catch(ArithmeticException e)
+        {
+            System.out.println("Denominator should not be 0, try again");
+        }
+        System.out.println("Bye");
+        
+        
+    } 
+}
+
+exception handling makes our program more robust even in case of errors like exceptions handled smoothly.
 
 
 
@@ -3341,9 +3372,43 @@ exception : program will be terminate abnormally.
 ![alt text](image-373.png)
 
 ![alt text](image-374.png)
+package nestedcatch;
+
+public class NestedCatch 
+{
+    public static void main(String[] args) 
+    {
+        int A[]={30,20,10,40,0};
+        
+        try
+        {
+            int c=A[0]/A[4];
+            System.out.println("Division is "+c);
+        
+            try
+            {
+                System.out.println(A[5]);
+            }
+            catch(ArrayIndexOutOfBoundsException e)
+            {
+                System.out.println("Index is Invalid");
+            }
+            
+        }
+        catch(ArithmeticException e)
+        {
+            System.out.println("Denominator should not be 0");
+        }
+        
+        
+        System.out.println("Bye");
+    }
+}
 
 ## 170. Class Exception
 Java having a lot of built in classes for handling the exceptions.
+![image](https://github.com/sidduganeshsid/JAVAstackRepo/assets/94279014/44d81c28-3dd5-4270-97ef-943f3c1cfbb6)
+
 ![alt text](image-375.png)
 ![alt text](image-376.png)
 
