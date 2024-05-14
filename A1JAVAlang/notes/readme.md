@@ -5538,7 +5538,8 @@ searching
 
 ![alt text](image-589.png)
 
-# Section 24 : Generics
+# Section 232 : Generics
+![image](https://github.com/sidduganeshsid/JAVAstackRepo/assets/94279014/753c3f06-dcb6-4c7f-873d-a3b30648fe8c)
 
 every class is directly or indirectly child of the object class.
 Generalization
@@ -6227,4 +6228,192 @@ chrono fields
 ![alt text](image-681.png)
 
 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# Sec 27 Network Programming
+![image](https://github.com/sidduganeshsid/JAVAstackRepo/assets/94279014/2ca06a02-2ded-406f-b6fb-dacd4080dc28)
 
+
+>laptop, PC or mobile phone there is a hardware available
+for communication through network and also required software is also available.
+
+>A conceptual model for network system is given
+that is called as OSI model.
+That is open systems interconnection
+and this is a standard OSI is a standard
+but there is one more model that is called as TCP/IP.
+Our systems follow this model TCP/IP model.
+This is also an standard model
+and this TCP/IP is similar to OSI.
+So if you understand OSI model then it is easy
+to learn about TCP/IP.
+
+>Like for example, this application is a web browser.
+Web browser and this application is a web server.
+So this web browser want to access a website or webpages
+that is available in this web server.
+So what it want to communicate with this one
+and how it's going to provide the service all these issues
+are handled at this application layer.
+What they want to do, what they want to communicate.
+Like this is sending a request for a webpage
+and this is sending a webpage and it is receiving
+and rendering it on the screen.
+This is all dealt with the application.
+So transferring is done via all other layers.
+So let us see what this layer do, presentation layer.
+See when the data is being transferred over a network.
+So the data may not be transferred in its original form
+and the data may be represented in some other form.
+Or let us say it is encrypted. It is encrypted.
+So when something is sent from her
+and it is encrypted, then it is decrypted here.
+So encryption of data and decryption
+of data is done at this layer that is at presentation layer.
+Then comes session layer.
+This layer decides the time period of communication
+or the complete start and the end of the communication.
+Like suppose this application here wants to download a file.
+For example, it has to download a file.
+So from the beginning to the end
+of the download this layer take cares of that session
+So the beginning of a file download
+to the end of a file download is called as session.
+And the session is kept independent of the connection even
+if the connection is not there, session may continue.
+For example, I will explain little detail on this one
+You suppose you are downloading some file from interne
+and power gone or connection lost or your battery was down
+and your system or your client system
+okay has stopped, your machine has stopped.
+Then if you restart your machine, bring it up
+back again then find download should start
+from the same point where it has stopped.
+It should not start as a fresh file download.
+If it is starting
+as a fresh file download means the session is lost.
+If it is starting from the same point where you have
+left means, it was in a session.
+Even if there was no connection
+or even the device was closed
+or switched off even then it was in a session.
+So this layer take cares of a session
+from the starting point to the end point of a communication.
+So this layer will talk to this layer.
+This is peer to peer communication.
+This layer on the other machine
+or maybe another client machine or server machin
+whatever it is, one who is consuming is called as client
+and one who is providing something is called a server.
+And each machine may change its role.
+Like suppose this machine wants
+to access something from here.
+So this machine becomes server
+and this machine becomes client.
+The next layer for the communication we need
+to establish connection in between two machines.
+So over via connection the transmission is done
+or data is transmitted.
+So that is taken care by this transport layer.
+And at this transport layer the communication
+may be connection oriented also.
+Connection oriented or it may be connectionless also.
+It may be connection oriented
+and even it may be connectionless.
+From this point the communication has started
+and this point the communication has ended
+and that may be connection oriented
+or it may be connectionless.
+The next layer is a network layer.
+This layer deals with a routing of your data.
+See, if you are talking to a server in some computer
+in the internet, a client is communicating.
+So the data transferred
+from the client is not directly sent onto the server.
+It may go via various other devices various other machines.
+Supose sitting in one corner of the world, like suppose
+from India you are communicating with the server in USA.
+Then they are not directly connected.
+The data is transferred via various other machines.
+So routing of the data is done at this network layer.
+Routing of the data is done here.
+So this is coming to the physical part now, right?
+Till here it was related to the application.
+From here it is coming related to the physical
+or actual transmission.
+From transport layer it starts.
+So here you can see that it deals with routing of the data
+and it'll identify the machines in network
+or internet using their addresses
+that are called as IP addresses.
+And these are not physical address of a computer.
+These are logical addresses.
+So using IP addresses the machines are identified
+in the network or in internet.
+Then this layer actually deals with the transmission
+of data from this machine to this machine.
+And this layer will take care whether every bit
+is transferred properly or not from this source
+to the destination or from client to server
+or server to client, vice versa.
+So the layer here will deal
+with transmission of data on this side
+and this layer transfer the data on that side.
+So it deals on this side and this deals on this side.
+And this physical layer is the actual
+medium where which the transmission
+of the communication is done.
+It may be wired or it may be wireless
+The actual cables or the wireless medium
+or radio waves or something, whatever is used
+for transmission of data that is nothing but physical layer
+over this or let stick as you as cables only.
+So where these cables, the data is transferred.
+Know one important thing, when any layer is talking peer
+to peer, then how they talk to each other
+like this is sending something and this confirms
+that yes I have received it perfectly.
+Or if it has not received, then it'll send
+back some information that I did not receive so
+and so think please send it again.
+So this type of communication may be there
+in between these two parties.
+So for communication, there must be some set
+of dialogues and those set of known dialogues
+between two different machine upon same layer.
+And also there must be some communication
+in between two layers upon the same machine same computer.
+That is data link layer talks to network layer.
+That talks to transport layer
+or when the client is sending a request via this.
+So it'll start from application layer and follow till here.
+Then it goes up like this.
+So each layer will take out its information from the packet
+or data packets whatever the information is kept
+by each layer, it is received by another layer
+on the receiving machine.
+So that information is dealing with the protocol.
+Like it says something to this one, it has to say something
+to this one, like starting off a session starting point
+and how much data is going to send.
+So this should receive that information.
+So that will be contained inside the packets
+that are sent from here to this machine.
+Now one more thing, add this layer, network layer.
+The machine or the device is identified by its IP address.
+That is a four byte address or notice.
+Six byte addresses are used
+because these four bytes addresses are not sufficient.
+So six bytes addresses are also introduced.
+Then this at a data link layer, a machine is identified
+with MAC address, that is medium access controller address.
+And this address is a physical address given to a device.
+Like if you have a mobile phone
+in your mobile phone you can check what is the MAC address
+of this mobile phone, your mobile phone
+that will be used by this data link layer.
+And that MAC number is fixed, it is given
+at the manufacturing of your mobile phone or your laptop.
+So that is given at the time of manufacturing.
+But this IP address may change depending
+on the network you are connected to it.
+So IP addresses are logical that may be changing.
