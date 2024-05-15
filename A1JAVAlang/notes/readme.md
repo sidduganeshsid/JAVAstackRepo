@@ -5695,7 +5695,7 @@ Queue follows FIFO mechanism
 
 [5,2,1,4,3]
 
-##
+## 240
 
 interaces
 ![alt text](image-632.png)
@@ -5712,6 +5712,8 @@ Set has the same methods as the Collection interface
 ![alt text](image-635.png)
 
 ![alt text](image-636.png)
+
+![image](https://github.com/sidduganeshsid/JAVAstackRepo/assets/94279014/f5513960-532b-440d-9f61-8325716243cf)
 
 ## 242 visiting the docs
 search > java 13 util
@@ -6235,6 +6237,9 @@ chrono fields
 
 >laptop, PC or mobile phone there is a hardware available
 for communication through network and also required software is also available.
+
+![image](https://github.com/sidduganeshsid/JAVAstackRepo/assets/94279014/59780c63-55f5-4f3e-8cd4-a1e6eebb8cc2)
+
 
 >A conceptual model for network system is given
 that is called as OSI model.
