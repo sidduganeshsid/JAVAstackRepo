@@ -6193,7 +6193,221 @@ public class SetDemo2 {
 ## 250 to 260 pause
 -->
 
+present in java.util
 
+Collection framework is nothing but data structure.
+
+That is very important for developing
+
+any basic useful application, not just simple program.
+
+If you're developing any application,
+
+then definitely, without data structure
+
+or collection framework, you cannot develop any application.
+
+So, that same data structure are building provided by Java
+
+and they are called as collections.
+
+So, instead of data structure
+
+we call them as collections here.
+
+Collection of data.
+
+So, data is the very important part of programming.
+
+We write the program so that it will process upon the data
+
+and perform computations on the data
+
+to come up with some results.
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/c1e942c0-d183-4fdf-b85f-f9904bb2b877/9a369ee2-8bf9-4196-a95e-654504e65d49/Untitled.png)
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/c1e942c0-d183-4fdf-b85f-f9904bb2b877/9dcae795-c21a-43ad-9f2c-d60ce57aa2af/Untitled.png)
+
+Getting data from various resources…
+
+keyboard
+
+File
+
+RDB
+
+Remote Computer
+
+OODB
+
+(data comes as the list of values)
+
+list like integers,floats, student objects, books, customers, products, accounts, movies, friends.
+
+⇒ program performs computation on the data. then program has to hold data in the memory for the computation.
+
+So, collection deals with arranging the data
+
+inside the main memory.
+
+That data will be used by Java program.
+
+So, the basic solution for storing the collection of values
+
+or the list of values is nothing but an array.
+
+Array is basic data structure provide by the compiler.
+
+Array size can’t be changed.
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/c1e942c0-d183-4fdf-b85f-f9904bb2b877/64ae60ec-340e-47bf-86fc-5a289e057521/Untitled.png)
+
+this is the major drawback of the array.
+
+Builtin Classes in the Collection FW
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/c1e942c0-d183-4fdf-b85f-f9904bb2b877/7d87af1b-f64d-4df6-8b9b-fe364c42f881/Untitled.png)
+
+circle is interface
+
+rec is classes
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/c1e942c0-d183-4fdf-b85f-f9904bb2b877/ac0a1b10-7e1e-41cc-94f1-375fd8b41671/Untitled.png)
+
+There's an interface called Collection,
+
+and all the interfaces and classes are directly
+
+or indirectly inheriting from this one.
+
+So let us understand Collection means what?
+
+It's a group of elements or items, or group of objects,
+
+and those object may be similar or dissimilar also,
+
+that is, homogeneous also, hydrogenous also.
+
+So a Collection is group of objects.
+
+So this interface is having the methods
+
+for adding new object, or removing the object,
+
+or checking or searching for an object,
+
+so these type of methods are there.
+
+## List interface is a collection
+
+List is a Collection, yes, as it is extending Collection,
+
+so List is a Collection,
+
+but it is a ordered list of elements.
+
+Ordered list of elements means what?
+
+The elements will have a number,
+
+so let us say this is 0, 1, 2, 3, 4, 5, 6,
+
+so they have index, they are ordered list of element.
+
+That's it, there's only the difference.
+
+Collection means just group of elements,
+
+then List means the group of elements will also have
+
+indexing, that is, they ordered.
+
+(we can’t do indexing with collection interface)
+
+- List can have duplicates also, but the elements are ordered.
+- ArrayList
+- LinkedList
+
+old Legacy Class
+
+Vector
+
+Stack
+
+## Set interface is a collection
+
+- set will not have duplicates.
+
+It will not allow you to insert duplicate objects.
+
+If already object is there, you cannot insert again.
+
+- so it's a unordered Collection
+    - SortedSet interface
+        - TreeSet class (treeset ds is used for faster searching)(unique elems)
+    - HashSet class
+    - LinkedHashSet
+
+## Queue works on discipline FIFO, first in first out.
+
+adding at end
+
+deleting from the front
+
+- PriorityQueue (class)
+
+Deque (interface) (insertion and deletion can be done from the both ends)
+
+## Map ( separate hierarchy )
+
+This is the implementation of hashing technique,
+
+so there, the objects are inserted or stored
+
+in the form of key and value pair.
+
+So we'll store key, and also value,
+
+so that whenever you want to search, you can give a key,
+
+and you can get the value corresponding to that key.
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/c1e942c0-d183-4fdf-b85f-f9904bb2b877/ee7e0bd9-8a04-4ca4-aa0d-0f1104d1d8a3/Untitled.png)
+
+HashTable is the legacy class
+
+SortedMap = sorted will be much faster for searching, so there is TreeMap,
+
+so tree-like, but also behaving like a map,
+
+## Collection interface
+
+The very first thing is, these collection classes
+
+and interfaces are generic.
+
+They support the object of any class.
+
+Just like simple, normal arrays,
+
+you can create an array of any type.
+
+Similarly, collection also support any type of object.
+
+So, they are called as generic.
+
+So, these are the methods of collection interface.
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/c1e942c0-d183-4fdf-b85f-f9904bb2b877/4bb62323-b455-4cf2-a3f2-20d1b57e4a79/Untitled.png)
+
+(interface will not have object, it is the generic representation for understanding)
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/c1e942c0-d183-4fdf-b85f-f9904bb2b877/45cfa781-d171-4d09-8d10-9a5bf33ac164/Untitled.png)
+
+retain will keep the same objects
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/c1e942c0-d183-4fdf-b85f-f9904bb2b877/676c2236-24bc-45a5-933c-1a9e35be00f9/Untitled.png)
 
 
 
