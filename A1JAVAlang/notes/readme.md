@@ -6224,10 +6224,10 @@ We write the program so that it will process upon the data
 and perform computations on the data
 
 to come up with some results.
+![image](https://github.com/sidduganeshsid/JAVAstackRepo/assets/94279014/0d85e5d6-cce8-4715-a506-f72efd7ed365)
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/c1e942c0-d183-4fdf-b85f-f9904bb2b877/9a369ee2-8bf9-4196-a95e-654504e65d49/Untitled.png)
+![image](https://github.com/sidduganeshsid/JAVAstackRepo/assets/94279014/fbd20979-aede-4638-91e0-4ae445ee4e5d)
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/c1e942c0-d183-4fdf-b85f-f9904bb2b877/9dcae795-c21a-43ad-9f2c-d60ce57aa2af/Untitled.png)
 
 Getting data from various resources…
 
@@ -6261,19 +6261,23 @@ Array is basic data structure provide by the compiler.
 
 Array size can’t be changed.
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/c1e942c0-d183-4fdf-b85f-f9904bb2b877/64ae60ec-340e-47bf-86fc-5a289e057521/Untitled.png)
+![image](https://github.com/sidduganeshsid/JAVAstackRepo/assets/94279014/336a9642-a78b-4d9a-9f51-4fcf1c193721)
+
+![image](https://github.com/sidduganeshsid/JAVAstackRepo/assets/94279014/1a175510-d24e-4c2f-9956-d5213ed564a7)
 
 this is the major drawback of the array.
 
 Builtin Classes in the Collection FW
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/c1e942c0-d183-4fdf-b85f-f9904bb2b877/7d87af1b-f64d-4df6-8b9b-fe364c42f881/Untitled.png)
+![image](https://github.com/sidduganeshsid/JAVAstackRepo/assets/94279014/20caac51-5f3a-46ac-935e-90a649db1f5f)
+
 
 circle is interface
 
 rec is classes
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/c1e942c0-d183-4fdf-b85f-f9904bb2b877/ac0a1b10-7e1e-41cc-94f1-375fd8b41671/Untitled.png)
+![image](https://github.com/sidduganeshsid/JAVAstackRepo/assets/94279014/4b700f13-25a4-4aa9-864b-f30318cb120a)
+
 
 There's an interface called Collection,
 
@@ -6372,8 +6376,8 @@ So we'll store key, and also value,
 so that whenever you want to search, you can give a key,
 
 and you can get the value corresponding to that key.
+![image](https://github.com/sidduganeshsid/JAVAstackRepo/assets/94279014/271f56a6-35e4-4b15-8938-9754a12c0234)
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/c1e942c0-d183-4fdf-b85f-f9904bb2b877/ee7e0bd9-8a04-4ca4-aa0d-0f1104d1d8a3/Untitled.png)
 
 HashTable is the legacy class
 
@@ -6399,15 +6403,18 @@ So, they are called as generic.
 
 So, these are the methods of collection interface.
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/c1e942c0-d183-4fdf-b85f-f9904bb2b877/4bb62323-b455-4cf2-a3f2-20d1b57e4a79/Untitled.png)
+![image](https://github.com/sidduganeshsid/JAVAstackRepo/assets/94279014/14e93ff7-bc91-4dae-8fdb-7a6c800ef26b)
+
 
 (interface will not have object, it is the generic representation for understanding)
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/c1e942c0-d183-4fdf-b85f-f9904bb2b877/45cfa781-d171-4d09-8d10-9a5bf33ac164/Untitled.png)
+![image](https://github.com/sidduganeshsid/JAVAstackRepo/assets/94279014/8c86fcee-cb38-472e-8bd0-7c5c8de9a732)
+
 
 retain will keep the same objects
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/c1e942c0-d183-4fdf-b85f-f9904bb2b877/676c2236-24bc-45a5-933c-1a9e35be00f9/Untitled.png)
+![image](https://github.com/sidduganeshsid/JAVAstackRepo/assets/94279014/139b54f6-d99a-40d0-a698-049abca20d60)
+
 
 
 
