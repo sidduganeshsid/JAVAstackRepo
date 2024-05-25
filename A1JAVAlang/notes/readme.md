@@ -5721,6 +5721,7 @@ not to use , but just hold
 ![alt text](image-624.png)
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # Section 25: Collection Framework
+<!--
 ![alt text](image-625.png)
 java program gets data from various place
 like list of values, array of values, database, file, network, etc.
@@ -6190,7 +6191,7 @@ public class SetDemo2 {
 }
 ```
 ## 250 to 260 pause
-
+-->
 
 
 
