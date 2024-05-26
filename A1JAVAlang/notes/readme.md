@@ -3801,9 +3801,9 @@ Quiz
 ![alt text](image-409.png)
 multiprogramming = running many programs in a single machine
 there are multiple forms of multiprogramming
-1. multi-user = more than one user using the same machine simultaneously.
+1. multi-user (unix & linux)(timesharing) = more than one user using the same machine simultaneously.
 
-2. multitasking = more than one task is running in the same machine simultaneously by single user.
+2. multitasking(windows, macOS) = more than one task is running in the same machine simultaneously by single user.
 
 multithreading is a type of multitasking. multiple threads are running
 
@@ -3826,7 +3826,7 @@ MULTI THREADING
 EACH ball uses one thread
 
 ![alt text](image-415.png)
-
+bubbles are the threads (threads are used in the servers)
 ![alt text](image-416.png)
 
 ## control flow of java program
@@ -3914,7 +3914,9 @@ whenever thread is created jvm or jre will give an id.
 ![alt text](image-430.png)
 
 ![alt text](image-431.png)
-
+daemon thread is a thread which has least priority.
+like garbage collector to the JVM
+autosave is daemon thread.
 
 ![alt text](image-432.png)
 wait
@@ -3948,6 +3950,8 @@ check
 
 ## 189. Sync [concept]
 it is the cordination between the threads
+1.synchronized block.
+2.synchronized method.
 ![alt text](image-444.png)
 
 ![alt text](image-445.png)
@@ -4471,11 +4475,11 @@ public class MathDemo
     public static void main(String[] args) 
     {
         System.out.print("Absolute :");
-        System.out.println(Math.abs(-123));
+        System.out.println(Math.abs(-123));//gives positive value onlly
         
         
         System.out.print("Absolute :");
-        System.out.println(StrictMath.abs(-123));
+        System.out.println(StrictMath.abs(-123)); //gives perfect value.(at runtime it is decided Math or strict math
         
        
         
@@ -4485,21 +4489,21 @@ public class MathDemo
         
         
         System.out.print("Exact Decrement :");
-       // System.out.println(Math.decrementExact(Integer.MIN_VALUE));
+       // System.out.println(Math.decrementExact(Integer.MIN_VALUE));//prevents the underflow
         
         int i=Integer.MIN_VALUE;
-       i--;
+       i--;//underflows the value
         System.out.println(i);
         
         
         System.out.print("Exponent value in Floating Point Rep. :");
-        System.out.println(Math.getExponent(123.45));
+        System.out.println(Math.getExponent(123.45));//stored inside the memory as exponent and mantissaa
         
         
                 
                
         System.out.print("Round Division :");
-        System.out.println(Math.floorDiv(50, 9));
+        System.out.println(Math.floorDiv(50, 9));//integer division
         
         
         System.out.print("e power x :");
@@ -4507,26 +4511,26 @@ public class MathDemo
         
         
         System.out.print("e power x :");
-        System.out.println(StrictMath.exp(1));
+        System.out.println(StrictMath.exp(1));//additional decimal points
 
        
         System.out.print("Log base 10 :");
-        System.out.println(Math.log10(100));
+        System.out.println(Math.log10(100));//2.0
         
         
         System.out.print("Maximum :");
-        System.out.println(Math.max(100, 50));
+        System.out.println(Math.max(100, 50));//100
         
         
         System.out.print("Tan :");
-        System.out.println(Math.tan(45*Math.PI/180));
+        System.out.println(Math.tan(45*Math.PI/180));//trigonometry.
        
        
         System.out.print("Convert to Radians :");
-        System.out.println(Math.toRadians(90));
+        System.out.println(Math.toRadians(90));//radians
         
         System.out.print("Convert to Degree :");
-        System.out.println(Math.toDegrees(Math.atan(1)));
+        System.out.println(Math.toDegrees(Math.atan(1)));//radiant to degree //tan inverse
 
         
         System.out.print("Convert To Degree :");
@@ -4547,7 +4551,7 @@ public class MathDemo
         
         
         System.out.print("Next Float Value :");
-        System.out.println(Math.nextAfter(12.5, 11));//if greater number then higher value or if lower number then lower value
+        System.out.println(Math.nextAfter(12.5, 11));//if greater number then higher value or if lower number then lower value (depends on the second parameter)
         
         
     }   
@@ -4555,7 +4559,7 @@ public class MathDemo
 ```
 
 ## enum
-
+=enum is used to define the user defined data types
 inside enum identifier is the constant
 public static final variables
 ![alt text](image-470.png)
@@ -4571,9 +4575,10 @@ enum can have other methods and constructor.
 
 ```java
 package enumdemo;
-
+//ordinal gives the index for enums
 enum Dept
-{
+{//public static final //identifier it's is a value //all are UPPER CASE
+//enums can have other methods and constructor
     CS("John","Block A"),IT("Smith","Block B"),CIVIL("Srinivas","Block C"),ECE("Dave","Block D");
     
     String head;
